@@ -1,10 +1,17 @@
 ﻿@page
-@model IndexModel
+@model NetwiseApp.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
-}
+	<div >
+		<form method="post">
+			<button type="submit" >Get Cat Fact</button>
+		</form>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+		@if (!string.IsNullOrEmpty(Model.CatFactMessage))
+		{
+			<div>
+				<h3>Cat Fact:</h3>
+				<p>@Model.CatFactMessage</p>
+			</div>
+		}
+	</div>
+}
